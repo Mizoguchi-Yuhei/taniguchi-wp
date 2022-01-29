@@ -21,6 +21,7 @@
   <!-- Custom styles for this template -->
   <link href="http://mysite.local/wp-content/themes/myblog/css/clean-blog.min.css" rel="stylesheet">
 
+  <?php wp_head(); ?>
 </head>
 
 <body>
@@ -74,7 +75,8 @@
         <div class="post-preview">
           <a href="post.html">
             <h2 class="post-title">
-              <?php the_title('◆', '●'); ?>
+              <?php $title =  the_title('◆', '●', false); ?>
+              <?php echo str_replace('Hello', 'こんにちは', $title); ?>
             </h2>
             <h3 class="post-subtitle">
               Problems look mighty small from 150 miles up
@@ -82,7 +84,8 @@
           </a>
           <p class="post-meta">Posted by
             <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
+            on September 24, 2019
+          </p>
         </div>
         <hr>
         <div class="post-preview">
@@ -93,7 +96,8 @@
           </a>
           <p class="post-meta">Posted by
             <a href="#">Start Bootstrap</a>
-            on September 18, 2019</p>
+            on September 18, 2019
+          </p>
         </div>
         <hr>
         <div class="post-preview">
@@ -107,7 +111,8 @@
           </a>
           <p class="post-meta">Posted by
             <a href="#">Start Bootstrap</a>
-            on August 24, 2019</p>
+            on August 24, 2019
+          </p>
         </div>
         <hr>
         <div class="post-preview">
@@ -121,7 +126,8 @@
           </a>
           <p class="post-meta">Posted by
             <a href="#">Start Bootstrap</a>
-            on July 8, 2019</p>
+            on July 8, 2019
+          </p>
         </div>
         <hr>
         <!-- Pager -->
@@ -178,6 +184,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
 
+  <?php wp_footer(); ?>
 </body>
 
 </html>
